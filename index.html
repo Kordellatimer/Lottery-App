@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Lottery</title>
+
+		<!-- external CSS link -->
+		<!-- <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+	<body>
+
+    <h1>Pick 3 numbers and try your luck!!</h1>
+    <input id="guess1" type="text" name="" value="">
+    <input id="guess2" type="text" name="" value="">
+    <input id="guess3" type="text" name="" value="">
+    <button id="spin" type="button" name="button">Try your luck!</button>
+    <span id="results"></span>
+
+
+		<script type="text/javascript">
+
+    document.getElementById('spin').onclick = lotterySpin;
+
+
+    function lotterySpin(){
+      const min = 1
+      const max = 51
+      let guess1 = document.getElementById('guess1')
+      let guess2 = document.getElementById('guess2')
+      let guess3 = document.getElementById('guess3')
+      let lotteryNumber = parseInt(Math.random() * (max - min) + min);
+
+      console.log(lotteryNumber)
+
+      if (guess1 == lotteryNumber || guess2 == lotteryNumber || guess3 == lotteryNumber) {
+        document.getElementById('results').innerHTML = "YES!!! You won!! The correct number was "+lotteryNumber+""
+      } else {
+        document.getElementById('results').innerHTML = "Sorry bro! You lost SUCKA! The LUCKY number was "+lotteryNumber+""
+      }
+
+    };
+
+
+		</script>
+
+
+<!--
+	<script type="text/javascript" src="js/main.js">
+
+	</script> -->
+	</body>
+</html>
